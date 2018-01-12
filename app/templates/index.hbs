@@ -1,13 +1,19 @@
 <h2>TODO APP</h2>
 
+{{#if isTodoList}}
 <div class="todo-container">
-    {{todo-item}}
+    {{#each-in todoList as |key value|}}
+        {{#link-to "item" key}}
+            {{todo-item todoListObject = value}}
+        {{/link-to}}    
+    {{/each-in}}
 </div>
+{{/if}}
 
 <button class="fixed-button" {{action "openAddModal"}}>+</button>
 
 {{#if isAddModalOpen}}
-    {{add-modal closingProperty=isAddModalOpen}}
+    {{add-modal closingProperty=isAddModalOpen newTodoListAction="setNewTodoList"}}
 {{/if}}
 
 {{outlet}}

@@ -5,21 +5,23 @@ export default Ember.Service.extend({
     init() {
         this._super(...arguments);
         if (typeof(Storage) !== "undefined") {
-            if (this.getValue() !== null){
-                let todoList = this.getValue();
-                this.setValue(todoList);
+            if (this.getValue('counter') !== null){
+                let todoList = this.getValue('todoList');
+                this.setValue('todoList',todoList);
+                let counter = this.getValue('counter');
+                this.setValue('counter',counter);
             }
         } else {
             alert('No support for Local Storage')
         }
     },
 
-    setValue(value){
-        localStorage.setItem('todoList',value);
+    setValue(key,value){
+        localStorage.setItem(key,value);
     },
 
-    getValue(){
-        return localStorage.getItem('todoList',value);
+    getValue(value){
+        return localStorage.getItem(value);
     }
 
 });

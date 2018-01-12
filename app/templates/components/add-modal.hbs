@@ -9,6 +9,7 @@ wrapper-class='centered-scrolling-wrapper'}}
     {{input placeholder="Task Title" value=taskTitle}}
     {{textarea type="text"  value=taskDescription rows=3  autoresize=true placeholder="Task description"}}
     <button {{action "addTask"}}>ADD</button>
+    <button {{action "closeSignUpModal"}}>Cancel</button>
 </div>
 
 {{/modal-dialog}}  

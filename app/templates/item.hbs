@@ -1,1 +1,16 @@
+<h2>TODO APP</h2>
+
+<div class="item">
+    <p>Title : {{item.title}}</p>
+    <p>Description : {{item.description}}</p>
+    <p>Status:{{item.status}}</p>
+    <button {{action "removeItem"}}>Delete</button>
+
+    {{#if  isPending}}
+        <button {{action "changeStatus" "Completed"}}>Mark Completed</button>
+    {{else}}    
+        <button {{action "changeStatus"  "Pending"}}>Mark Pending</button>
+    {{/if}}    
+</div>
+
 {{outlet}}
