@@ -5,4 +5,9 @@
 </div>
 
 <button class="fixed-button" {{action "openAddModal"}}>+</button>
+
+{{#if isAddModalOpen}}
+    {{add-modal closingProperty=isAddModalOpen}}
+{{/if}}
+
 {{outlet}}

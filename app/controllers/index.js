@@ -2,9 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+    isAddModalOpen:false,
+
     actions:{
         openAddModal(){
-            console.log('hiiiiiii');
+            this.set('isAddModalOpen',true);
         }
     }
+    
 });

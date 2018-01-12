@@ -1,0 +1,16 @@
+{{#modal-dialog translucentOverlay=true 
+targetAttachment='none' 
+container-class='addItem-overlay-container' 
+overlay-class='addItem-scrolling-overlay' 
+wrapper-class='centered-scrolling-wrapper'}}
+
+<div class="add-items">
+    <title>Add Task</title>
+    {{input placeholder="Task Title" value=taskTitle}}
+    {{textarea type="text"  value=taskDescription rows=3  autoresize=true placeholder="Task description"}}
+    <button {{action "addTask"}}>ADD</button>
+</div>
+
+{{/modal-dialog}}  
+
+{{yield}}
